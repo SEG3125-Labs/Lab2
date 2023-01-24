@@ -5,9 +5,46 @@
 </head>
 
 <body>
+    <h1 class="centered">uOttawa Grocery Store</h1>
+    <!-- Tab links -->
+    <div class="tab centered">
+        <button class="tablinks" onclick="openTab(event, 'Customer')" id="defaultOpen">Customer</button>
+        <button class="tablinks" onclick="openTab(event, 'Products')">Products</button>
+        <button class="tablinks" onclick="openTab(event, 'Cart')">Cart</button>
+    </div>
+    
+    <!-- Tab content -->
+    <div id="Customer" class="tabcontent">
+        <h3>Customer</h3>
+        <div>
+            <p>Restrictions (Select the dietary restrictions that apply to the user)</p>
+            <input type="checkbox" name="Restrictions" value="Vegitarian">Vegitarian<br>
+            <input type="checkbox" name="Restrictions" value="GlutenFree">Gluten Free<br>
+            <div>
+                Organic or non-organic: 
+                <select id="type-of-food">
+                    <option value="no-preference" selected="selected">No Preference</option>
+                    <option value="organic">Organic</option>
+                    <option value="non-organic">Non-Organic</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div id="Products" class="tabcontent">
+        <h3>Products</h3>
+        <p>Please select your products from the list below. The following list was created based on the customers restrictions.</p>
+    </div>
+    
+    <div id="Cart" class="tabcontent">
+        <h3>Cart</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
 
-
-<script src=""></script>
+<script src="scripts/script.js"></script>
+<script>
+    document.getElementById("defaultOpen").click();
+</script>
 
 </body>
 </html>
