@@ -80,18 +80,59 @@ var products = [
 
 
 function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-  
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
+    var tabcontent = document.getElementsByClassName("tabcontent");
+    for (var i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
     }
   
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
+    var tablinks = document.getElementsByClassName("tablinks");
+    for (var i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
   
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
+
+    if (tabName == "Products") {
+        // Sort the products based on price
+        products.sort((a, b) => (b.price - a.price));
+
+        updateProductList()
+    }
+}
+
+function updateProductList() {
+    var productList = document.getElementById("productList");
+
+    productList.innerHTML = "";
+
+    var typeOfFood = document.getElementById("type-of-food");
+
+    for (var i = 0; i < products.length; i++) {
+        if (document.getElementById("Vegitarian").checked && !products[i].vegetarian) {
+            console.log(1)
+            continue;
+        } else if (document.getElementById("GlutenFree").checked && !products[i].glutenFree) {
+            console.log(2)
+            continue;
+        } else if (typeOfFood.options[typeOfFood.selectedIndex].text == "Organic" && !products[i].organic) {
+            console.log(3)
+            continue;
+        } else if (typeOfFood.options[typeOfFood.selectedIndex].text == "Non-Organic" && products[i].organic) {
+            console.log(4)
+            continue;
+        }
+        var checkbox = document.createElement("input");
+		checkbox.type = "checkbox";
+		checkbox.name = "product";
+		checkbox.value = products[i].name;
+		productList.appendChild(checkbox);
+
+        var label = document.createElement('label')
+		label.htmlFor = products.name;
+		label.appendChild(document.createTextNode(products[i].name + " $" + products[i].price));
+		productList.appendChild(label);
+
+        productList.appendChild(document.createElement("br"));
+    }
 }

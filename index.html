@@ -18,8 +18,8 @@
         <h3>Customer</h3>
         <div>
             <p>Restrictions (Select the dietary restrictions that apply to the user)</p>
-            <input type="checkbox" name="Restrictions" value="Vegitarian">Vegitarian<br>
-            <input type="checkbox" name="Restrictions" value="GlutenFree">Gluten Free<br>
+            <input type="checkbox" name="Restrictions" value="Vegitarian" id="Vegitarian">Vegitarian<br>
+            <input type="checkbox" name="Restrictions" value="GlutenFree" id="GlutenFree">Gluten Free<br>
             <div>
                 Organic or non-organic: 
                 <select id="type-of-food">
@@ -33,7 +33,10 @@
     
     <div id="Products" class="tabcontent">
         <h3>Products</h3>
-        <p>Please select your products from the list below. The following list was created based on the customers restrictions.</p>
+        <p>Please select your products from the list below. The following list was created based on the customers restrictions. (sorted highest to lowest price)</p>
+        <div id="productList"></div>
+        <br>
+        <button id="addToCart" type="button" onclick="">Add Items To Cart</button>
     </div>
     
     <div id="Cart" class="tabcontent">
