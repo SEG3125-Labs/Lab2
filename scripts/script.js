@@ -93,7 +93,10 @@ function openTab(evt, tabName) {
 
 	let elm = document.getElementById(tabName)
 	elm.style.display = "block";
-	elm.className += " active";
+
+	evt.target.className += " active"
+
+
 	// document.getElementById(tabName).style.display = "block";
 	// document.getElementById(tabName).className += " active";
 
