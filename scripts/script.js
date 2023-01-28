@@ -77,7 +77,7 @@ const products = [
 		price: 5.99
 	}
 ];
-
+let selected = []
 
 function openTab(evt, tabName) {
 	var tabcontent = document.getElementsByClassName("tabcontent");
@@ -133,6 +133,11 @@ function updateProductList() {
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
 		checkbox.value = products[i].name;
+
+		if (selected.includes(products[i].name)) {
+			checkbox.checked = true;
+		}
+
 		productList.appendChild(checkbox);
 
 		var label = document.createElement('label')
@@ -147,7 +152,7 @@ function updateProductList() {
 
 function addToCart() {
 
-	let selected = []
+	selected = []
 	let total = 0;
 
 	let prods = document.getElementsByName("product");
@@ -158,15 +163,20 @@ function addToCart() {
 	}
 
 	var d = document.createElement("div");
-	d.innerHTML = "You selected : <br>";
+
+	d.innerHTML = "You selected : <br><br>";
 
 	selected.forEach((e) => {
 		const product = products.find((e2) => {
 			return e2.name === e;
 
 		});
+		item = document.createElement("div");
+		item.className = "item"
 
-		d.append(e)
+		item.innerHTML = e
+		
+		d.appendChild(item)
 		d.appendChild(document.createElement("br"))
 		total += product.price
 

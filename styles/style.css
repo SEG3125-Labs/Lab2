@@ -26,7 +26,7 @@ nav {
     padding: 1rem;
 }
 
-button{
+button {
     border: 2px solid #3f51b5;
     border-radius: 20px;
     background-color: transparent;
@@ -34,8 +34,10 @@ button{
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
+
 button:hover {
-    background-color: #dfe5eb; /* or any other color */
+    background-color: #dfe5eb;
+    /* or any other color */
     cursor: pointer;
 }
 
@@ -63,4 +65,7 @@ nav .active {
     border: 2px white solid;
 }
 
+.item {
+    font-weight: bold;
 
+}
