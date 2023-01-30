@@ -5,7 +5,7 @@
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body id="allText">
     <h1 class="centered">uOttawa Grocery Store</h1>
     <!-- Tab links -->
     <nav class="tab centered">
@@ -48,11 +48,20 @@
         </div>
     </div>
 
+    <div>
+        <button type="button" name="biggerText" id="biggerText" onclick="biggerText()">A+</button>
+    </div>
+    <div>
+        <button type="button" name="smallerText" id="smallerText" onclick="smallerText()">A-</button>
+    </div>
+
     <footer>
         <div class="footer">
             <a>Website Designed by Adrian Iannantuono, Chunhui Ma and Maruf Saki</a>
         </div>
     </footer>
+
+
 
     <script src="scripts/script.js"></script>
     <script>

@@ -69,3 +69,22 @@ nav .active {
     font-weight: bold;
 
 }
+
+#biggerText {
+    height: 50px;
+    width: 50px;
+    position:fixed;
+    bottom: 60px;
+    right: 10px;
+    background-color: yellow;
+  }
+  
+  #smallerText {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 0px;
+    right: 10px;
+    background-color: yellow;
+  }
+  

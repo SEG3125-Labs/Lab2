@@ -4,77 +4,88 @@ const products = [
 		vegetarian: false,
 		glutenFree: true,
 		organic: true,
-		price: 14.99
+		price: 14.99,
+		imgSrc: "img/steak.png"
 	},
 	{
 		name: "Bread",
 		vegetarian: true,
 		glutenFree: false,
 		organic: false,
-		price: 5.99
+		price: 5.99,
+		imgSrc: "img/bread.png"
 	},
 	{
 		name: "Coffee Beans",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 10.99
+		price: 10.99,
+		imgSrc: "img/coffee.png"
 	},
 	{
 		name: "Cheese",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 5.50
+		price: 5.50,
+		imgSrc: "img/cheese.png"
 	},
 	{
 		name: "Strawberries",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 2.49
+		price: 2.49,
+		imgSrc: "img/strawberries.png"
 	},
 	{
 		name: "Apples",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 1.99
+		price: 1.99,
+		imgSrc: "img/apples.png"
 	},
 	{
 		name: "Pasta",
 		vegetarian: true,
 		glutenFree: false,
 		organic: false,
-		price: 9.50
+		price: 9.50,
+		imgSrc: "img/pasta.png"
 	},
 	{
 		name: "Tomatoes",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 3.90
+		price: 3.90,
+		imgSrc: "img/tomatoes.png"
 	},
 	{
 		name: "Salad",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 6.49
+		price: 6.49,
+		imgSrc: "img/salad.png"
 	},
 	{
 		name: "Chicken",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
-		price: 9.99
+		price: 9.99,
+		imgSrc: "img/chicken.png"
 	},
 	{
 		name: "Beans",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 5.99
+		price: 5.99,
+		imgSrc: "img/beans.png"
 	}
 ];
 let selected = []
@@ -108,6 +119,18 @@ function openTab(evt, tabName) {
 	}
 }
 
+function biggerText() {
+  var all = document.getElementById("allText");
+
+  all.style.fontSize = "30px";
+}
+
+function smallerText() {
+  var all = document.getElementById("allText");
+
+  all.style.fontSize = "16px";
+}
+
 function updateProductList() {
 	var productList = document.getElementById("productList");
 
@@ -134,9 +157,17 @@ function updateProductList() {
 		checkbox.name = "product";
 		checkbox.value = products[i].name;
 
+		var Image = document.createElement("img");
+    Image.src = products[i].imgSrc;
+    Image.height = 70;
+    Image.width = 90;
+
 		if (selected.includes(products[i].name)) {
 			checkbox.checked = true;
 		}
+
+		productList.appendChild(Image);
+		productList.appendChild(document.createElement("br"));
 
 		productList.appendChild(checkbox);
 
@@ -146,6 +177,10 @@ function updateProductList() {
 		productList.appendChild(label);
 
 		productList.appendChild(document.createElement("br"));
+		productList.appendChild(document.createElement("br"));
+    productList.appendChild(document.createElement("br"));
+
+
 	}
 }
 
